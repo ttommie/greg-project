@@ -1,7 +1,7 @@
 const chalk = require('chalk');
 const moment = require('moment');
 const { LoggerError } = require('./CustomError');
-const timestamp = `[${moment().format(' HH:mm:ss | DD-MM-YYYY')}]`;
+const timestamp = `[${moment().format(' HH:mm:ss | DD-MM-YYYY ')}]`;
 
 function loader(content) {
   if (!content) throw new LoggerError('No message found!');
