@@ -12,7 +12,7 @@ module.exports = async (client) => {
             client.aliases.set(alias, props.name);
           });
         });
-        client.logger.loader(`${client.color.chalkColor.blueChalk('[FINISH]')} ${client.color.chalkColor.magentaChalk(`${dir}`)} loaded with ${command.length} command(s)`);
+        client.logger.loader(`${client.color.chalkColor.blueChalk('[PREFIX]')} ${client.color.chalkColor.magentaChalk(`${dir}`)} loaded with ${command.length} command(s)`);
       });
     });
   });
