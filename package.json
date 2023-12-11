@@ -17,11 +17,11 @@
   },
   "homepage": "https://github.com/ttommie/greg-project#readme",
   "dependencies": {
-    "chalk": "^5.3.0",
-    "discord.js": "^14.14.1"
+    "chalk": "^4.1.2",
+    "discord.js": "^14.14.1",
+    "moment": "^2.29.4"
   },
   "devDependencies": {
-    "dotenv": "^16.3.1",
     "eslint": "^8.55.0"
   }
 }
