@@ -25,7 +25,7 @@ client.logger = require('./utils/logger.js');
 client.color = require('./utils/colors.js');
 
 // Handlers
-['events', 'commands'].forEach(file => {
+['events', 'commands', 'errors'].forEach(file => {
   require(`./handlers/${file}`)(client);
 });
 
