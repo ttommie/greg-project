@@ -14,7 +14,7 @@ module.exports = {
     const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
 
     userInfoEmbed.setColor('#3F51B5');
-    userInfoEmbed.setAuthor({ name: '👥 Greg Project - $userinfo', url: 'https://github.com/ttommie/greg-project/' });
+    userInfoEmbed.setAuthor({ name: '👥 | Greg Project - $userinfo', url: 'https://github.com/ttommie/greg-project/' });
     userInfoEmbed.setThumbnail(`${member.user.displayAvatarURL({ dynamic: true })}`);
     userInfoEmbed.addFields(
       { name: 'Register Date', value: `${moment(member.user.createdAt).format('LLL')}`, inline: true },

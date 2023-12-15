@@ -20,9 +20,9 @@ module.exports = async (client, message) => {
 
   if (props.permissions) {
     if (!message.member.permissions.has(props.permissions)) {
-      return message.reply('⚠️ You must me a moderator to use this command!');
+      return message.reply('⚠️ You must be a moderator to use this command!');
     }
   }
 
-  cmd.execute(client, message, args).catch(err => client.emit('error', err, message));
+  cmd.execute(client, message, args).catch(err => client.emit('An error has occurred!', err, message));
 };
