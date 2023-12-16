@@ -3,8 +3,9 @@ const moment = require('moment');
 
 module.exports = {
   name: 'userinfo',
-  description: 'Replies with User Statistics',
-  usage: '$userinfo',
+  description: 'Provides information about a specific user.',
+  usage: '$userinfo | $userinfo @target',
+  example: '$userinfo @tommy',
   aliases: ['userinfo', 'ui', 'user'],
   dir: 'Information',
   permissions: [],

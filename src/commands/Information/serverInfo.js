@@ -2,7 +2,7 @@ const { EmbedBuilder, ChannelType } = require('discord.js');
 
 module.exports = {
   name: 'serverinfo',
-  description: 'Replies with Server Statistics',
+  description: ' Displays information about the server.',
   usage: '$serverinfo',
   aliases: ['serverinfo', 'si', 'server'],
   dir: 'Information',
