@@ -43,7 +43,7 @@ module.exports = {
         new ButtonBuilder()
           .setLabel('Create Issue')
           .setStyle(ButtonStyle.Link)
-          .setURL('https://github.com/ttommie/fyce-bot/issues"'),
+          .setURL('https://github.com/ttommie/greg-project/issues'),
       );
 
     message.channel.send({ embeds: [botInfoEmbed], components: [buttonComponents] });

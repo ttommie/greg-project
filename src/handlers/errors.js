@@ -14,7 +14,7 @@ module.exports = async (client) => {
     client.logger.error(err);
   });
 
-  process.on('uncaughtException', err =>{
+  process.on('uncaughtException', err => {
     if (err.stack.includes('Promise { <pending> }')) return;
     return client.logger.error(err.stack);
   });

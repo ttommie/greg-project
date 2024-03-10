@@ -4,7 +4,7 @@ const translate = require('@iamtraction/google-translate');
 module.exports = {
   name: 'translate',
   description: 'Translates text into different languages.',
-  usage: '$translate *supply text to translate*',
+  usage: '$translate <message>',
   example: '$translate Hello World!',
   aliases: ['translate', 't'],
   dir: 'Information',
