@@ -11,8 +11,12 @@ module.exports = {
     {
       name: 'ping',
       description: 'Replies with Bot Latency',
-      type: 3, required: false,
-      choices: [ { name: 'yes', value: 'true' }, { name: 'no', value: 'false' } ],
+      type: 3,
+      required: false,
+      choices: [
+        { name: 'yes', value: 'true' },
+        { name: 'no', value: 'false' },
+      ],
     },
   ],
   async execute(client, interaction) {

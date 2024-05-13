@@ -1,6 +1,5 @@
 module.exports = async (client) => {
-
-  process.on('unhandledRejection', err => {
+  process.on('unhandledRejection', (err) => {
     if (!err) return;
 
     if (err instanceof Error) {
@@ -14,7 +13,7 @@ module.exports = async (client) => {
     client.logger.error(err);
   });
 
-  process.on('uncaughtException', err => {
+  process.on('uncaughtException', (err) => {
     if (err.stack.includes('Promise { <pending> }')) return;
     return client.logger.error(err.stack);
   });

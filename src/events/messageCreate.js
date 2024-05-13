@@ -24,5 +24,5 @@ module.exports = async (client, message) => {
     }
   }
 
-  cmd.execute(client, message, args).catch(err => client.emit('An error has occurred!', err, message));
+  cmd.execute(client, message, args).catch((err) => client.emit('An error has occurred!', err, message));
 };

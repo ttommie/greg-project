@@ -31,27 +31,26 @@ module.exports = {
     );
     botInfoEmbed.setThumbnail(client.user.displayAvatarURL());
 
-    const buttonComponents = new ActionRowBuilder()
-      .addComponents(
-        new ButtonBuilder()
-          // TODO: SET INV URL
-          .setLabel('Bot Invite')
-          .setStyle(ButtonStyle.Link)
-          .setURL('https://github.com/ttommie'),
+    const buttonComponents = new ActionRowBuilder().addComponents(
+      new ButtonBuilder()
+        // TODO: SET INV URL
+        .setLabel('Bot Invite')
+        .setStyle(ButtonStyle.Link)
+        .setURL('https://github.com/ttommie'),
 
-        // TODO: FIX LINK (MAYBE PACKAGE LOCK 2)
-        new ButtonBuilder()
-          .setLabel('Create Issue')
-          .setStyle(ButtonStyle.Link)
-          .setURL('https://github.com/ttommie/greg-project/issues'),
-      );
+      // TODO: FIX LINK (MAYBE PACKAGE LOCK 2)
+      new ButtonBuilder()
+        .setLabel('Create Issue')
+        .setStyle(ButtonStyle.Link)
+        .setURL('https://github.com/ttommie/greg-project/issues'),
+    );
 
     message.channel.send({ embeds: [botInfoEmbed], components: [buttonComponents] });
   },
 };
 
 function BotUptime(client) {
-  let totalSeconds = (client.uptime / 1000);
+  let totalSeconds = client.uptime / 1000;
   const days = Math.floor(totalSeconds / 86400);
   totalSeconds %= 86400;
   const hours = Math.floor(totalSeconds / 3600);

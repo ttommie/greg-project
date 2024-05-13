@@ -39,20 +39,20 @@ const chalkColor = {
 };
 
 const messageColor = {
-  red : 0xF52E2E,
-  yellow: 0xF5F52E,
-  orange: 0xF5AD2E,
-  green: 0x76D813,
-  cyan: 0x13D8CF,
-  blue : 0x33A2FF,
-  darkblue: 0x131CD8,
-  purple:0x8A13D8,
-  pink:0xD813D8,
-  white: 0xFFFFFF,
-  gray:0x9E9E9E,
-  black:0x000000,
-  blurple: 0x7289DA,
-  greyple:0x99AAB5,
+  red: 0xf52e2e,
+  yellow: 0xf5f52e,
+  orange: 0xf5ad2e,
+  green: 0x76d813,
+  cyan: 0x13d8cf,
+  blue: 0x33a2ff,
+  darkblue: 0x131cd8,
+  purple: 0x8a13d8,
+  pink: 0xd813d8,
+  white: 0xffffff,
+  gray: 0x9e9e9e,
+  black: 0x000000,
+  blurple: 0x7289da,
+  greyple: 0x99aab5,
 };
 
 module.exports = {

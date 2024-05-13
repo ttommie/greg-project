@@ -19,7 +19,10 @@ module.exports = {
     const translatedText = await translate(queryText, { to: 'en' });
 
     translateEmbed.setColor('#36393F');
-    translateEmbed.setAuthor({ name: '💬 | Greg Project - $translate', url: 'https://github.com/ttommie/greg-project/' });
+    translateEmbed.setAuthor({
+      name: '💬 | Greg Project - $translate',
+      url: 'https://github.com/ttommie/greg-project/',
+    });
     translateEmbed.addFields(
       { name: 'Orginal Text', value: `${queryText}`, inline: false },
       { name: 'English Translation', value: `${translatedText.text}`, inline: false },

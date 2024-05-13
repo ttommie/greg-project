@@ -1,4 +1,7 @@
 const { EmbedBuilder, PermissionsBitField } = require('discord.js');
+const { CommandError, KICK_ERRS } = require('../../utils/CustomError');
+
+// TODO: Add a DM Feature
 
 module.exports = {
   name: 'kick',
@@ -9,23 +12,30 @@ module.exports = {
   permissions: [PermissionsBitField.Flags.KickMembers],
 
   async execute(client, message, args) {
-    const reason = args.slice(1).join(' ');
     const target = message.mentions.members.first();
+    const reason = args.slice(1).join(' ') || 'no reason specified.';
     const targetHighestRole = target.roles.highest.position;
 
-    // TODO: ERRORS NEED RESPONSES
-    if (!target) return; // Needs a target
-    if (target.id === message.member.id) return; // target can't be yourself
-    if (reason.length > 512) return; // reason can't exceed 512 characters
-    if (message.member.roles.highest.position < targetHighestRole) return; // user being kicked can't have a higher status
+    if (target.id === message.member.id) {
+      CommandError(message, KICK_ERRS.kickSelf);
+      return;
+    }
+
+    if (message.member.roles.highest.position < targetHighestRole) {
+      CommandError(message, KICK_ERRS.permDiff);
+      return;
+    }
+
+    if (reason.length > 512) {
+      CommandError(message, KICK_ERRS.reasonSize);
+      return;
+    }
 
     const kickEmbed = new EmbedBuilder();
     kickEmbed.setColor('#36393F');
     kickEmbed.setAuthor({ name: '🥾 | Greg Project - $kick', url: 'https://github.com/ttommie/greg-project/' });
     kickEmbed.setDescription(`${target} has been successfully kicked.`);
-    kickEmbed.addFields(
-      { name: 'Reason:', value: `${reason === '' ? 'no reason specified.' : reason}`, inline: false },
-    );
+    kickEmbed.addFields({ name: 'Reason:', value: `${reason}`, inline: false });
 
     // KICK USER HERE: target.kick(reason);
 

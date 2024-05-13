@@ -36,7 +36,7 @@ function TimeFormatter(time) {
   times.forEach((x) => {
     const timeType = x.charAt(x.length - 1);
     const count = x.slice(0, x.length - 1);
-    console.log({ 'timeType': timeType, 'totalTime': count });
+    console.log({ timeType: timeType, totalTime: count });
 
     // CREATE TIMER
     // SEND MESSAGE WHEN TIMER UP
