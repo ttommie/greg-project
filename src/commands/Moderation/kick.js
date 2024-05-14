@@ -1,5 +1,5 @@
 const { EmbedBuilder, PermissionsBitField } = require('discord.js');
-const { CommandError, KICK_ERRS } = require('../../utils/CustomError');
+const { CommandError, ERR_MESSAGES } = require('../../utils/CustomError');
 
 // TODO: Add a DM Feature
 
@@ -17,17 +17,17 @@ module.exports = {
     const targetHighestRole = target.roles.highest.position;
 
     if (target.id === message.member.id) {
-      CommandError(message, KICK_ERRS.kickSelf);
+      CommandError(message, ERR_MESSAGES.kickSelf);
       return;
     }
 
     if (message.member.roles.highest.position < targetHighestRole) {
-      CommandError(message, KICK_ERRS.permDiff);
+      CommandError(message, ERR_MESSAGES.permDiff);
       return;
     }
 
     if (reason.length > 512) {
-      CommandError(message, KICK_ERRS.reasonSize);
+      CommandError(message, ERR_MESSAGES.reasonSize);
       return;
     }
 

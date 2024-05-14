@@ -1,15 +1,23 @@
 const { EmbedBuilder, ButtonBuilder, ActionRowBuilder, ButtonStyle } = require('discord.js');
 
-const KICK_ERRS = {
-  kickSelf: 'Unable to kick self',
+const ERR_MESSAGES = {
+  // Generic
   reasonSize: 'Reason must be under 512 characters',
-  permDiff: 'Unable to kick a user with higher priority',
+
+  // Kick
+  kickSelf: 'Unable to kick self',
+  kickPermDiff: 'Unable to kick a user with higher priority',
+
+  // Ban
+  banSelf: 'Unable to ban self',
+  banPermDiff: 'Unable to ban a user with higher priority',
+  notBannable: 'Unable to ban this user',
 };
 
 function CommandError(message, err) {
   const errorEmbed = new EmbedBuilder();
   errorEmbed.setColor('#36393F');
-  errorEmbed.setAuthor({ name: '🚨 | Greg Project - Error', url: 'https://github.com/ttommie/greg-project/' });
+  errorEmbed.setAuthor({ name: '⛔ | Greg Project - Error', url: 'https://github.com/ttommie/greg-project/' });
   errorEmbed.setDescription(`${err}\n\n use the \`$help\` command for more info`);
 
   const buttonComponents = new ActionRowBuilder().addComponents(
@@ -38,7 +46,7 @@ function ChalkError(message) {
 }
 
 module.exports = {
-  KICK_ERRS,
+  ERR_MESSAGES,
   LoggerError,
   ChalkError,
   CommandError,
