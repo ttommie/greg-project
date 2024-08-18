@@ -12,6 +12,9 @@ const ERR_MESSAGES = {
   banSelf: 'Unable to ban self',
   banPermDiff: 'Unable to ban a user with higher priority',
   notBannable: 'Unable to ban this user',
+
+  // Joke
+  emptyJokeRequest: 'category doesn\'t exist',
 };
 
 function CommandError(message, err) {
