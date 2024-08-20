@@ -19,7 +19,7 @@ module.exports = {
     const userCount = guild.members.cache.filter((member) => !member.user.bot).size;
     const botCount = guild.members.cache.filter((member) => member.user.bot).size;
     const textCount = guild.channels.cache.filter((channels) => channels.type === ChannelType.GuildText).size;
-    const voiceCount = guild.channels.cache.filter((c) => c.type === ChannelType.GuildText).size;
+    const voiceCount = guild.channels.cache.filter((c) => c.type === ChannelType.GuildVoice).size;
     const roleCount = guild.roles.cache.size - 1;
 
     serverInfoEmbed.setColor('#36393F');
