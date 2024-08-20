@@ -14,12 +14,16 @@ module.exports = {
 
   async execute(client, message, args) {
     const URL = args[0] ? `https://official-joke-api.appspot.com/jokes/${args[0]}/random` : 'https://official-joke-api.appspot.com/random_joke';
-    const jokeResult = await request(URL);
-    const jokeDetails = await jokeResult.body.json();
+    const jokeReq = await request(URL);
+    const jokeDetails = await jokeReq.body.json();
+
+    if (jokeDetails.length === 0 && args[0]) {
+      CommandError(message, `The **${args[0]}** ${ERR_MESSAGES.badCategory}`);
+      return;
+    }
 
     if (jokeDetails.length === 0) {
-      CommandError(message, `The **${args[0]}** ${ERR_MESSAGES.emptyJokeRequest}`);
-      return;
+      CommandError(message, `${ERR_MESSAGES.emptyJokeRequest}`);
     }
 
     const jokeEmbed = new EmbedBuilder();

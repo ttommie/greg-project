@@ -1,6 +1,8 @@
 const { EmbedBuilder } = require('discord.js');
 const moment = require('moment');
 
+// TODO: support for USER ID & USERNAME
+
 module.exports = {
   name: 'userinfo',
   description: 'Provides information about a specific user.',
