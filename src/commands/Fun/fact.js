@@ -15,6 +15,10 @@ module.exports = {
     const factReq = await request(URL);
     const factResult = await factReq.body.json();
 
+    if (factReq.statusCode !== 200) {
+      CommandError(message, ERR_MESSAGES.badRequest);
+    }
+
     if (factResult.length === 0) {
       CommandError(message, `${ERR_MESSAGES.emptyFactRequest}`);
       return;

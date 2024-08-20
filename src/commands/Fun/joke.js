@@ -17,13 +17,17 @@ module.exports = {
     const jokeReq = await request(URL);
     const jokeDetails = await jokeReq.body.json();
 
+    if (jokeReq.statusCode !== 200) {
+      CommandError(message, ERR_MESSAGES.badRequest);
+    }
+
     if (jokeDetails.length === 0 && args[0]) {
       CommandError(message, `The **${args[0]}** ${ERR_MESSAGES.badCategory}`);
       return;
     }
 
     if (jokeDetails.length === 0) {
-      CommandError(message, `${ERR_MESSAGES.emptyJokeRequest}`);
+      CommandError(message, ERR_MESSAGES.emptyJokeRequest);
     }
 
     const jokeEmbed = new EmbedBuilder();

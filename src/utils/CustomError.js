@@ -3,6 +3,7 @@ const { EmbedBuilder, ButtonBuilder, ActionRowBuilder, ButtonStyle } = require('
 const ERR_MESSAGES = {
   // Generic
   reasonSize: 'Reason must be under 512 characters',
+  badRequest: 'The API failed to fetch request',
 
   // Kick
   kickSelf: 'Unable to kick self',

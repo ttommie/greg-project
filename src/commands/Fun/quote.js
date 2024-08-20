@@ -15,6 +15,10 @@ module.exports = {
     const quoteReq = await request(URL);
     const quoteResult = await quoteReq.body.json();
 
+    if (quoteReq.statusCode !== 200) {
+      CommandError(message, ERR_MESSAGES.badRequest);
+    }
+
     if (quoteResult.length === 0) {
       CommandError(message, `${ERR_MESSAGES.emptyQuoteRequest}`);
       return;

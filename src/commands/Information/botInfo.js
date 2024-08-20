@@ -27,7 +27,7 @@ module.exports = {
       { name: 'Uptime', value: `${BotUptime(client)}`, inline: true },
       { name: 'Bot Version', value: 'v1.0.0', inline: true },
       { name: '\u200b', value: '\u200b', inline: true },
-      { name: 'Node Version', value: '[v18.17.0](https://nodejs.org/en/blog/release/v18.17.0)', inline: true },
+      { name: 'Node Version', value: '[v20.16.0](https://nodejs.org/en/blog/release/v20.16.0)', inline: true },
     );
     botInfoEmbed.setThumbnail(client.user.displayAvatarURL());
 
