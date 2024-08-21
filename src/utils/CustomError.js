@@ -15,14 +15,18 @@ const ERR_MESSAGES = {
   notBannable: 'Unable to ban this user',
 
   // Joke
-  emptyJokeRequest: 'unable to retrieve joke',
-  badCategory: 'category doesn\'t exist',
+  emptyJokeRequest: 'Unable to retrieve joke',
+  badCategory: 'Category doesn\'t exist',
 
   // Fact
-  emptyFactRequest: 'unable to retrieve fact',
+  emptyFactRequest: 'Unable to retrieve fact',
 
   // Quote
-  emptyQuoteRequest: 'unable to retrieve quote',
+  emptyQuoteRequest: 'Unable to retrieve quote',
+
+  // Magic
+  emptyQuestion: 'A question must be given',
+
 };
 
 function CommandError(message, err) {
